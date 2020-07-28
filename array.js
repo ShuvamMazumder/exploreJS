@@ -1,4 +1,4 @@
-var friendAge = [10, 15, 20, 22, 23];
+var friendAge = [10, 15, 20, 22, 23, 50, 60];
 console.log(friendAge[0]);
 
 var crushAge = friendAge[2];
@@ -18,3 +18,12 @@ console.log(friendAge, friendAge.length);
 
 friendAge.pop();
 console.log(friendAge);
+
+friendAge.shift();
+console.log(friendAge);
+
+friendAge.unshift(5);
+console.log(friendAge);
+
+var part= friendAge.slice(0,3)
+console.log(part);
