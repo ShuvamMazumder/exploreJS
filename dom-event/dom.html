@@ -28,7 +28,7 @@
             </section>
 
             <section>
-                <article>
+                <article id="first-article">
                     <h3>article-1</h3>
                     <p class="author">author-1</p>
                     <p class="description">
@@ -52,6 +52,16 @@
                         nobis optio!
                     </p>
                 </article>
+                <article>
+                    <h3>try to add by javaScript</h3>
+                    <ul id="gift-list">
+                        <li>gift item -1</li>
+                        <li>gift item -2</li>
+                        <li>gift item -3</li>
+                        <li>gift item -4</li>
+                        <li>gift item -5</li>
+                    </ul>
+                </article>
             </section>
         </main>
 
@@ -71,9 +81,29 @@
             for (var i = 0; i < authors.length; i++) {
                 var element = authors[i];
                 element.innerHTML = "lekhok-" + (i + 1);
+                element.setAttribute('title','all authors is same');
                 element.style.backgroundColor = "lightblue";
                 element.style.margin = "10px";
             }
+
+            //add a element (p) in article
+            const article = document.getElementById('first-article');
+            const newPara = document.createElement('p');
+            newPara.innerHTML ='this is added by javaScript';
+            article.appendChild(newPara);
+
+            //add to gift article
+            const ul =document.getElementById('gift-item');
+            const li = document.createElement('li');
+            li.innerHTML='brand new gift';
+            ul.appendChild(li);
+
+
+
+
+
+
+
         </script>
     </body>
 </html>
