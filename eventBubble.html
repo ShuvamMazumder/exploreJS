@@ -44,11 +44,11 @@
                     itemParent.appendChild(newItem);
                 });
 
-            //***click to add item (work after add a new item)
+            //***click to Delete item (work after add a new item)
             document
                 .getElementById("body")
                 .addEventListener("click", function (event) {
-                    //console.log(this,event.target);
+                    console.log(this,event.target);
                     event.target.parentNode.removeChild(event.target);
                 });
 
