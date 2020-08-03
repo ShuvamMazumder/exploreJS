@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            h1,
+            p {
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="list-menu">my list</h1>
+        <div id="body">
+            <p class="item" id="first">lorem1</p>
+            <p class="item">lorem2</p>
+            <p class="item">lorem3</p>
+            <p class="item">lorem4</p>
+            <p class="item" id="last">lorem5</p>
+        </div>
+        <button id="addNew">Add New Item</button>
+
+        <script>
+            //*****click to remove items (doesnt work after add a new item1)
+            // var items = document.getElementsByClassName("item");
+            // for (let i = 0; i < items.length; i++) {
+            //     const element = items[i];
+            //     element.addEventListener("click", function (event) {
+            //         //console.log(this,event.target);
+            //         //console.log(event.target.parentNode);
+            //         event.target.parentNode.removeChild(event.target);
+            //     });
+            // }
+
+            //***click to add item (bottom level)
+            document
+                .getElementById("addNew")
+                .addEventListener("click", function (event) {
+                    var itemParent = document.getElementById("body");
+                    var newItem = document.createElement("p");
+                    newItem.innerText = "added new element";
+                    itemParent.appendChild(newItem);
+                });
+
+            //***click to add item (work after add a new item)
+            document
+                .getElementById("body")
+                .addEventListener("click", function (event) {
+                    //console.log(this,event.target);
+                    event.target.parentNode.removeChild(event.target);
+                });
+
+            // document.getElementById('first').addEventListener('click',function(event){
+            //     console.log('first item clicked');
+            // })
+            // document.getElementById('last').addEventListener('click',function(event){
+            //     console.log('last item clicked');
+            // })
+            // document.getElementById('body').addEventListener('click',function(event){
+            //     console.log('menu list clicked');
+            // })
+        </script>
+    </body>
+</html>
